@@ -7,6 +7,7 @@ public class Point {
     private int y;
 
     public Point(int x, int y) {
+        checkLimits(x,y);
         this.x = x;
         this.y = y;
     }
@@ -46,5 +47,20 @@ public class Point {
                 "x=" + x +
                 ", y=" + y +
                 '}';
+    }
+
+    public void setX(int xValue) {
+        checkLimits(xValue,xValue);
+        x = xValue;
+    }
+
+    public void setY(int yValue) {
+        checkLimits(yValue,yValue);
+        y = yValue;
+    }
+
+    private void checkLimits(int x, int y){
+        assert x >= 0 && x <= 100;
+        assert y >= 0 && y <= 100;
     }
 }
