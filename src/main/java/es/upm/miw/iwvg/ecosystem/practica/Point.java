@@ -47,4 +47,12 @@ public class Point {
                 ", y=" + y +
                 '}';
     }
+
+    public void setX(int xValue) {
+        x = xValue;
+    }
+
+    public void setY(int yValue) {
+        y = yValue;
+    }
 }

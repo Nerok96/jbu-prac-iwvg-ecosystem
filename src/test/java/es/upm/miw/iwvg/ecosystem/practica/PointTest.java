@@ -50,4 +50,20 @@ class PointTest {
         assertEquals(2, point.getY());
     }
 
+    @Test
+    void testSetX(){
+        point = new Point(2);
+        assertEquals(2, point.getX());
+        point.setX(5);
+        assertEquals(5, point.getX());
+    }
+
+    @Test
+    void testSetY(){
+        point = new Point(2);
+        assertEquals(2, point.getY());
+        point.setY(10);
+        assertEquals(10, point.getY());
+    }
+
 }
