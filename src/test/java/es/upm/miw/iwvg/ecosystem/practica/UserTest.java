@@ -1,4 +1,4 @@
-package es.upm.miw.iwvg.ecosystem;
+package es.upm.miw.iwvg.ecosystem.practica;
 
 
 import es.upm.miw.iwvg.ecosystem.practica.User;
