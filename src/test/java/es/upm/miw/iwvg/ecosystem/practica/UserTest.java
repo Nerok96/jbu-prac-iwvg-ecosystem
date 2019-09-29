@@ -57,4 +57,10 @@ class UserTest {
         assertEquals("Xyz", user.getFamilyName());
     }
 
+    @Test
+    void testGetNameFullUpperCase() {
+        user = new User(99, "abc", "xyz");
+        assertEquals("ABC", user.getNameFullUpperCase());
+    }
+
 }
