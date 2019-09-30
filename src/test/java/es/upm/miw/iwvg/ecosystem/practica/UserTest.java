@@ -41,26 +41,33 @@ class UserTest {
 
     @Test
     void testUserGetNumber() {
-        user = new User(99, "abc", "xyz");
+        user = new User(99, "namelowercase", "familynamelowercase");
         assertEquals(99, user.getNumber());
     }
 
     @Test
     void testUserGetName() {
-        user = new User(99, "abc", "xyz");
-        assertEquals("Abc", user.getName());
+        user = new User(99, "namelowercase", "familynamelowercase");
+        assertEquals("Namelowercase", user.getName());
     }
 
     @Test
     void testUserGetFamilyName() {
-        user = new User(99, "abc", "xyz");
-        assertEquals("Xyz", user.getFamilyName());
+        user = new User(99, "namelowercase", "familynamelowercase");
+        assertEquals("Familynamelowercase", user.getFamilyName());
     }
 
     @Test
     void testGetNameFullUpperCase() {
-        user = new User(99, "abc", "xyz");
-        assertEquals("ABC", user.getNameFullUpperCase());
+        user = new User(99, "namelowercase", "familynamelowercase");
+        assertEquals("NAMELOWERCASE", user.getNameFullUpperCase());
     }
 
+    @Test
+    void testGetFullNameLowerCase() {
+        user = new User(99, "namelowercase", "familynamelowercase");
+        assertEquals("familynamelowercase namelowercase", user.getFullNameLowerCase());
+        user = new User(99, "NAMEUPPERCASE", "FAMILYNAMEUPPERCASE");
+        assertEquals("familynameuppercase nameuppercase", user.getFullNameLowerCase());
+    }
 }

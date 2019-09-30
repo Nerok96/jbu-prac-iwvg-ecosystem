@@ -42,4 +42,7 @@ public class User {
         return this.name.toUpperCase();
     }
 
+    public String getFullNameLowerCase() {
+        return new StringBuilder().append(familyName).append(" ").append(name).toString().toLowerCase();
+    }
 }
