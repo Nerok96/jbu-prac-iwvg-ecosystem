@@ -1,6 +1,5 @@
 package es.upm.miw.iwvg.ecosystem.practica;
 
-
 import org.apache.logging.log4j.LogManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -13,27 +12,27 @@ class DecimalCollectionTest {
 
     @BeforeEach
     void before() {
-        this.decimalCollection = new DecimalCollection();
-        this.decimalCollection.add(2.0);
-        this.decimalCollection.add(-1.0);
-        this.decimalCollection.add(3.0);
-        this.decimalCollection.add(2.0);
+        decimalCollection = new DecimalCollection();
+        decimalCollection.add(2.0);
+        decimalCollection.add(-1.0);
+        decimalCollection.add(3.0);
+        decimalCollection.add(2.0);
     }
 
     @Test
     void testDecimalCollection() {
-        this.decimalCollection = new DecimalCollection();
-        assertEquals(0, this.decimalCollection.size());
+        decimalCollection = new DecimalCollection();
+        assertEquals(0, decimalCollection.size());
     }
 
     @Test
     void testAdd() {
-        assertEquals(4, this.decimalCollection.size());
+        assertEquals(4, decimalCollection.size());
     }
 
     @Test
     void testSum() {
-        assertEquals(6.0, this.decimalCollection.sum(), 10e-5);
+        assertEquals(6.0, decimalCollection.sum(), 10e-5);
     }
 
     @Test
@@ -44,7 +43,7 @@ class DecimalCollectionTest {
 
     @Test
     void testHigher() {
-        assertEquals(3.0, this.decimalCollection.higher(), 10e-5);
+        assertEquals(3.0, decimalCollection.higher(), 10e-5);
     }
 
     @Test
@@ -54,12 +53,27 @@ class DecimalCollectionTest {
 
     @Test
     void testLower() {
-        assertEquals(-1.0, this.decimalCollection.lower(), 10e-5);
+        assertEquals(-1.0, decimalCollection.lower(), 10e-5);
     }
 
     @Test
     void testLowerArithmeticExceptionIfEmpty() {
         assertThrows(ArithmeticException.class, () -> new DecimalCollection().lower());
+    }
+
+    @Test
+    void TestGetTotalSum() {
+        assertEquals(6.0, decimalCollection.getTotalSum());
+    }
+
+    @Test
+    void TestGetTotalSumNegativeValue() {
+        decimalCollection = new DecimalCollection();
+        decimalCollection.add(-2.1);
+        decimalCollection.add(-1.2);
+        decimalCollection.add(-3.3);
+        decimalCollection.add(-2.3);
+        assertEquals(-8.899999999999999, decimalCollection.getTotalSum());
     }
 
 }
