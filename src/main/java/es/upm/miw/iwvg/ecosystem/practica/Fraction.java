@@ -27,4 +27,12 @@ public class Fraction {
         return denominator;
     }
 
+    public boolean isProperFraction() {
+        return this.numerator < this.denominator;
+    }
+
+    public boolean isImproperFraction() {
+        return !isProperFraction();
+    }
+
 }
