@@ -109,25 +109,4 @@ public class FractionTest {
         assertFalse(fractionEqual.isBiggerFraction(fraction));
     }
 
-    @Test
-    void testIsEquivalent() {
-        fraction = new Fraction(4, 8);
-        Fraction fractionEquivalent = new Fraction(5, 10);
-        assertTrue(fraction.isEquivalent(fractionEquivalent));
-    }
-
-    @Test
-    void testIsEquivalentEqual() {
-        fraction = new Fraction(10, 5);
-        Fraction fractionEquivalentEqual = fraction;
-        assertTrue(fraction.isEquivalent(fractionEquivalentEqual));
-    }
-
-    @Test
-    void testIsNotEquivalent() {
-        fraction = new Fraction(10, 5);
-        Fraction fractionNotEquivalent = new Fraction(12, 14);
-        assertFalse(fraction.isEquivalent(fractionNotEquivalent));
-    }
-
 }
