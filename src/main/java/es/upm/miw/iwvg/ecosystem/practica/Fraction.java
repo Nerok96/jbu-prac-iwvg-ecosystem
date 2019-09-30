@@ -27,4 +27,20 @@ public class Fraction {
         return denominator;
     }
 
+    public boolean isProperFraction() {
+        return this.numerator < this.denominator;
+    }
+
+    public boolean isImproperFraction() {
+        return !isProperFraction();
+    }
+
+    public boolean isBiggerFraction(Fraction comparedFraction) {
+        return (this.numerator / this.denominator) > (comparedFraction.getNumerator() / getDenominator());
+    }
+
+    public boolean isEquivalent(Fraction comparedFraction) {
+        return (this.numerator * comparedFraction.getDenominator()) == (this.denominator * comparedFraction.getNumerator());
+    }
+
 }
