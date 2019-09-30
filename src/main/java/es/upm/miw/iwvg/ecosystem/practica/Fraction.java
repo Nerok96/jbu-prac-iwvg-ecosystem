@@ -35,4 +35,8 @@ public class Fraction {
         return !isProperFraction();
     }
 
+    public boolean isBiggerFraction(Fraction comparedFraction) {
+        return (this.numerator / this.denominator) > (comparedFraction.getNumerator() / getDenominator());
+    }
+
 }

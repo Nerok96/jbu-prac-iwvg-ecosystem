@@ -3,7 +3,7 @@ package es.upm.miw.iwvg.ecosystem.practica;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class FractionTest {
 
@@ -52,36 +52,60 @@ public class FractionTest {
     @Test
     void testIsProperFractionProperFraction() {
         fraction = new Fraction(5, 10);
-        assertEquals(true, fraction.isProperFraction());
+        assertTrue(fraction.isProperFraction());
     }
 
     @Test
     void testIsProperFractionImproperFraction() {
         fraction = new Fraction(10, 5);
-        assertEquals(false, fraction.isProperFraction());
+        assertFalse(fraction.isProperFraction());
     }
 
     @Test
     void testIsProperFractionImproperFractionSameNumeratorDenominator() {
         fraction = new Fraction(5, 5);
-        assertEquals(false, fraction.isProperFraction());
+        assertFalse(fraction.isProperFraction());
     }
 
     @Test
     void testIsImproperFractionProperFraction() {
         fraction = new Fraction(10, 5);
-        assertEquals(true, fraction.isImproperFraction());
+        assertTrue(fraction.isImproperFraction());
     }
 
     @Test
     void testIsImproperFractionImproperFraction() {
         fraction = new Fraction(5, 10);
-        assertEquals(false, fraction.isImproperFraction());
+        assertFalse(fraction.isImproperFraction());
     }
 
     @Test
     void testIsImproperFractionImproperFractionSameNumeratorDenominator() {
         fraction = new Fraction(5, 5);
-        assertEquals(true, fraction.isImproperFraction());
+        assertTrue(fraction.isImproperFraction());
+    }
+
+    @Test
+    void testIsBiggerFractionBigger() {
+        fraction = new Fraction(10, 5);
+        Fraction fractionSmaller = new Fraction(6, 5);
+        assertTrue(fraction.isBiggerFraction(fractionSmaller));
+        assertFalse(fractionSmaller.isBiggerFraction(fraction));
+    }
+
+    @Test
+    void testIsBiggerFractionSmaller() {
+        fraction = new Fraction(6, 5);
+        Fraction fractionBigger = new Fraction(10, 5);
+        assertFalse(fraction.isBiggerFraction(fractionBigger));
+        assertTrue(fractionBigger.isBiggerFraction(fraction));
+    }
+
+    @Test
+    void testIsBiggerFractionEquals() {
+        fraction = new Fraction(10, 5);
+        Fraction fractionEqual = fraction;
+        assertFalse(fraction.isBiggerFraction(fractionEqual));
+        assertFalse(fractionEqual.isBiggerFraction(fraction));
     }
 }
