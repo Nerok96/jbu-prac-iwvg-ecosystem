@@ -109,7 +109,6 @@ public class FractionTest {
         assertFalse(fractionEqual.isBiggerFraction(fraction));
     }
 
-
     @Test
     void testIsEquivalent() {
         fraction = new Fraction(4, 8);
